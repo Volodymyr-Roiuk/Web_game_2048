@@ -406,8 +406,8 @@ class Game2048 {
 
   start() {
     this.createHtmlBoard();
-    // this.generateNewNumber();
-    // this.generateNewNumber();
+    this.generateNewNumber();
+    this.generateNewNumber();
     document.addEventListener('keydown', this.pressKey.bind(this));
     document.querySelector('.newGame').addEventListener('click', this.newGame.bind(this));
 
