@@ -48,8 +48,8 @@ body {
   cursor: pointer;
 }
 
-.grid {
-  display: grid;
+/* .grid { 
+  display: grid; 
   grid-gap: 15px;
   grid-template-columns: repeat(4, 100px);
   max-width: 445px;
@@ -57,20 +57,30 @@ body {
   background-color: #BBADA0;
   border: 15px solid #BBADA0;
   border-radius: 3%;
+} */
+
+.grid {
+  display: grid; 
+  grid-gap: 15px;
+  grid-template-columns: repeat(4, 100px);
+  max-width: 445px;
+  margin: 50px auto;
+  background-image: url(fon.png);
+  background-size: cover;
+  border: 15px solid #BBADA0;
+  border-radius: 3%;
 }
 
 .grid__item {
-  box-sizing: border-box;
   width: 100px;
   height: 100px;
-  background-color: #CDC1B3;
+  box-sizing: border-box;
+  /* background-color: #CDC1B3; */
   border-radius: 3%;
   text-align: center;
   line-height: 100px;
   font-size: 53px;
   font-weight: bold;
-
-  transition: grid-column-start 10s; 
   color: rgb(119, 110, 101);
 }
 

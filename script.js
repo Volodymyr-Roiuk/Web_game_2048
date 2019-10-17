@@ -425,8 +425,8 @@ class Game2048 {
 
     this.score = 0;
     this.updateScore();
-    // this.generateNewNumber();
-    // this.generateNewNumber();
+    this.generateNewNumber();
+    this.generateNewNumber();
   }
 
   checkLose() {
