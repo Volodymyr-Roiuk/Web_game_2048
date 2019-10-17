@@ -147,6 +147,8 @@ body {
   }
 
   .grid__item {
+    transform: translate(20px, 0);
+    transition: transform 1s;
     box-sizing: border-box;
     width: 50px;
     height: 50px;
