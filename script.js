@@ -2,6 +2,8 @@ class Game2048 {
   constructor() {
     this.board = [];
     this.score = 0;
+    this.startY;
+    this.startX;
   }
 
   createHtmlBoard() {
@@ -408,6 +410,9 @@ class Game2048 {
     this.generateNewNumber();
     document.addEventListener('keydown', this.pressKey.bind(this));
     document.querySelector('.newGame').addEventListener('click', this.newGame.bind(this));
+
+    document.addEventListener('touchstart', this.touchStart.bind(this));
+    document.addEventListener('touchend', this.touchEnd.bind(this));
   }
 
   newGame() {
@@ -478,10 +483,48 @@ class Game2048 {
   updateScore() {
     document.querySelector('.score_counter').textContent = this.score;
   }
+
+  touchStart(event) {
+    this.startY = event.touches[0].clientY;
+    this.startX = event.touches[0].clientX;
+  }
+
+  touchEnd(event) {
+    let endY = event.changedTouches[0].clientY;
+    let endX = event.changedTouches[0].clientX;
+    let verticalResult;
+    let horisontalResult;
+
+    if (this.startY < endY) {
+      verticalResult = endY - this.startY;
+    } else {
+      verticalResult = this.startY - endY;
+    }
+
+    if (this.startX < endX) {
+      horisontalResult = endX - this.startX;
+    } else {
+      horisontalResult = this.startX - endX;
+    }
+
+    if (horisontalResult > verticalResult) {
+      if (this.startX < endX) {
+        this.buttonRight();        
+      } else {
+        this.buttonLeft();
+      }
+    } else {
+      if (this.startY < endY) {
+        this.buttonBottom();
+      } else {
+        this.buttonTop();
+      }
+    }
+  }
+
 }
 
 
 
 let game = new Game2048();
 game.start();
-
