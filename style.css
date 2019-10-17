@@ -2,6 +2,8 @@ body {
   margin: 0;
   background-color: #FBF8F1;
   font-family: Helvetica, Arial, sans-serif;
+
+  overscroll-behavior: contain;
 }
 
 .nav {
@@ -48,34 +50,24 @@ body {
   cursor: pointer;
 }
 
-/* .grid { 
-  display: grid; 
-  grid-gap: 15px;
-  grid-template-columns: repeat(4, 100px);
-  max-width: 445px;
-  margin: 50px auto;
-  background-color: #BBADA0;
-  border: 15px solid #BBADA0;
-  border-radius: 3%;
-} */
-
 .grid {
   display: grid; 
   grid-gap: 15px;
   grid-template-columns: repeat(4, 100px);
   max-width: 445px;
   margin: 50px auto;
-  background-image: url(fon.png);
+  background-image: url(images/fon.png); 
   background-size: cover;
   border: 15px solid #BBADA0;
   border-radius: 3%;
+  background-color: #BBADA0;
 }
 
 .grid__item {
   width: 100px;
   height: 100px;
   box-sizing: border-box;
-  /* background-color: #CDC1B3; */
+  background-color: #CDC1B3;
   border-radius: 3%;
   text-align: center;
   line-height: 100px;
@@ -150,11 +142,13 @@ body {
 @media screen and (max-width: 500px) {
   .grid {
     max-width: 225px;
-    border: 15px solid #BBADA0;
     grid-gap: 8px;
     grid-template-columns: repeat(4, 50px);
     margin: 25px auto;
     border: 8px solid #BBADA0;
+
+    background-image: url(images/small-screen-fon.png); 
+    background-size: cover;
   }
 
   .grid__item {
