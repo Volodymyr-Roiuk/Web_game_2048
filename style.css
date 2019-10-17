@@ -139,16 +139,15 @@ body {
 
 @media screen and (max-width: 500px) {
   .grid {
-    max-width: 245px;
+    max-width: 225px;
     border: 15px solid #BBADA0;
-    grid-gap: 15px;
+    grid-gap: 8px;
     grid-template-columns: repeat(4, 50px);
     margin: 25px auto;
+    border: 8px solid #BBADA0;
   }
 
   .grid__item {
-    transform: translate(20px, 0);
-    transition: transform 1s;
     box-sizing: border-box;
     width: 50px;
     height: 50px;
@@ -164,7 +163,6 @@ body {
   .score_container {
     width: 50px;
     height: 35px;
-    /* padding-top: 10px; */
   }
   
   .score_text {
